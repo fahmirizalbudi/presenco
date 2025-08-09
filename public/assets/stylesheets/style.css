@@ -7,6 +7,16 @@
     font-family: 'Inter', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9b9999; 
+    border-radius: 4px; 
+}
+
 body {
     background-color: #FFF;
 }
@@ -179,6 +189,7 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
+    text-decoration: none;
 }
 
 .add-btn-icon {
@@ -266,4 +277,77 @@ body {
 .badge.gray {
     background: #f3f4f6;
     color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.twin-form-input-group {
+    display: flex;
+    gap: 12px;
+}
+
+.form-input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-label {
+    line-height: 16px;
+    font-size: 14.25px;
+    color: #83899F;
+    margin-left: 4px;
+    font-style: italic;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid #D7D9E2;
+    color: #0A1B39;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-input::placeholder {
+    color: #83899F;
+}
+
+.form-button-submit {
+    width: fit-content;
+    height: 42px;
+    padding: 0 20px;
+    border-radius: 14px;
+    background-color: #000;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.form-button-text {
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+}
+
+.form-validation {
+    font-size: 13px;
+    color: #EE2750;
+    margin-left: 4px;
+    font-style: italic;
 }

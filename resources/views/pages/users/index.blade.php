@@ -12,10 +12,10 @@
                     autocomplete="off">
             </div>
         </div>
-        <button class="add-btn">
+        <a class="add-btn" href="{{ route('users.create') }}">
             <span class="add-btn-icon">+</span>
             <span class="add-btn-text">Create User</span>
-        </button>
+        </a>
     </div>
     <div class="table-wrapper">
         <table class="elegant-table">
@@ -24,31 +24,29 @@
                     <th>#</th>
                     <th>FULLNAME</th>
                     <th>EMAIL ADDRESS</th>
+                    <th>GENDER</th>
                     <th>ROLE</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td><span class="badge blue">Administrator</span></td>
-                    <td class="actions">
-                        <img src="./assets/images/edit.svg" alt="edit" class="action-edit">
-                        <img src="./assets/images/delete.svg" alt="delete" class="action-delete">
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>jane@example.com</td>
-                    <td><span class="badge gray">Default</span></td>
-                    <td class="actions">
-                        <img src="./assets/images/edit.svg" alt="edit" class="action-edit">
-                        <img src="./assets/images/delete.svg" alt="delete" class="action-delete">
-                    </td>
-                </tr>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $user->fullname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td><span class="badge {{ $user->gender === 'Male' ? 'green' : 'red' }}">{{ $user->gender }}</span></td>
+                        <td><span class="badge {{ $user->role->name === 'Administrator' ? 'blue' : 'gray' }}">{{ $user->role->name }}</span></td>
+                        <td class="actions">
+                            <a href="{{ route('users.edit', $user->id) }}"><img src="./assets/images/edit.svg" alt="edit" class="action-edit"></a>
+                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="confirm('Are you sure you want to delete this user?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="background:none;border:none;"><img src="./assets/images/delete.svg" alt="delete" class="action-delete"></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -62,13 +60,25 @@
         const searchIcon = document.querySelector('.search-control-icon');
 
         searchInput.addEventListener('input', (e) => {
-            if (e.target.value.trim() === "") {
+            let keyword = e.target.value.toLowerCase().trim();
+            const rows = document.querySelectorAll('tbody tr');
+
+            if (keyword === "") {
                 searchLabel.classList.remove('active');
                 searchIcon.classList.remove('active');
             } else {
                 searchLabel.classList.add('active');
                 searchIcon.classList.add('active');
             }
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase().trim();
+                if (text.includes(keyword)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
         });
     </script>
 @endpush

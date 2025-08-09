@@ -11,4 +11,4 @@ Route::get('/overview', function () {
     return view('pages.overview.index');
 })->name('overview');
 
-Route::resource('users', UserController::class);
+Route::resource('users', UserController::class)->except(['show']);
