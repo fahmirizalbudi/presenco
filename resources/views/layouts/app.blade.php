@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/style.css') }}">
 </head>
 <body>
     @include('partials.sidebar')
