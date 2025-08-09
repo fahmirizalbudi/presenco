@@ -59,6 +59,7 @@ body {
     text-decoration: none;
     align-items: center;
     border-radius: 8px;
+    outline: none;
 }
 
 .group-menu.active {
@@ -93,4 +94,176 @@ body {
 .cumbs {
     font-weight: 600;
     margin-bottom: 24px;
+}
+
+.table-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.search-control-label {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 4px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #83899F;
+    margin-left: 12px;
+    position: absolute;
+    top: -8px;
+    width: fit-content;
+    background-color: white;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+}
+
+.search-control-input-group {
+    width: 320px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #D7D9E2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s linear;
+}
+
+.search-control-icon {
+    opacity: 0.6;
+}
+
+.search-control-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 18px;
+    width: 100%;
+    font-weight: 500;
+    font-weight: 500;
+    color: #0A1B39;
+}
+
+.search-control-input::placeholder {
+    color: #83899F;
+}
+
+.search-control-label.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-control-icon.active {
+    opacity: 1;
+}
+
+.add-btn {
+    height: 45px;
+    padding: 0 20px;
+    border-radius: 14px;
+    background-color: #000;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-btn-icon {
+    font-size: 18px;
+    position: relative;
+    bottom: 1.5px;
+    right: 1px;
+}
+
+.add-btn-text {
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+}
+
+.table-wrapper {
+    margin-top: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.elegant-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.elegant-table thead {
+    background-color: #FFF;
+}
+
+.elegant-table th {
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    font-size: 14px;
+}
+
+.elegant-table th:not(.actions) {
+    text-align: left;
+}
+
+.elegant-table td {
+    padding: 20px 40px;
+    color: #111827;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.action-edit, .action-delete {
+    cursor: pointer;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-family: 'Consolas';
+}
+
+.badge.blue {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+.badge.green {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge.red {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge.gray {
+    background: #f3f4f6;
+    color: #374151;
 }
