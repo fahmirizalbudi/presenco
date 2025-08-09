@@ -13,5 +13,6 @@
         <h1 class="cumbs">@yield('cumbs')</h1>
         @yield('content')
     </main>
+    @stack('scripts')
 </body>
 </html>
