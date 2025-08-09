@@ -6,11 +6,11 @@
         <span class="group-label">Navigation</span>
     </div>
     <div class="group-menus">
-        <a href="#" class="group-menu {{ request()->is('overview') ? 'active' : '' }}">
+        <a href="/overview" class="group-menu {{ request()->is('overview') ? 'active' : '' }}">
             <img src="./assets/images/overview.svg" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Overview</span>
         </a>
-        <a href="#" class="group-menu {{ request()->is('users') ? 'active' : '' }}">
+        <a href="/users" class="group-menu {{ request()->is('users') ? 'active' : '' }}">
             <img src="./assets/images/users.svg" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Users</span>
         </a>
