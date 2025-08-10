@@ -351,3 +351,11 @@ body {
     margin-left: 4px;
     font-style: italic;
 }
+
+.scan-qr {
+    width: 100%;
+    height: calc(100dvh - 111px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

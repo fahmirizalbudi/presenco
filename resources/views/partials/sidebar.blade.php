@@ -18,7 +18,7 @@
             <img src="{{ asset('assets/images/presences.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Presences</span>
         </a>
-        <a href="#" class="group-menu {{ request()->is('qr*') ? 'active' : '' }}">
+        <a href="/qr" class="group-menu {{ request()->is('qr*') ? 'active' : '' }}">
             <img src="{{ asset('assets/images/qr.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Scan Qr</span>
         </a>

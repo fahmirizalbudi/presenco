@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PresenceController;
+use App\Http\Controllers\QrController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ Route::get('/overview', function () {
 Route::resource('users', UserController::class)->except(['show']);
 Route::resource('presences', PresenceController::class);
 Route::get('presences/{date}/view', [PresenceController::class, 'view'])->name('presences.view');
+Route::get('qr', QrController::class);
