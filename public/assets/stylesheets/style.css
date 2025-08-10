@@ -246,7 +246,7 @@ body {
     gap: 12px;
 }
 
-.action-edit, .action-delete {
+.action-edit, .action-delete, .action-view {
     cursor: pointer;
 }
 
