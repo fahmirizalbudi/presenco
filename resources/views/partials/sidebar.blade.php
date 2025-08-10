@@ -14,13 +14,13 @@
             <img src="{{ asset('assets/images/users.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Users</span>
         </a>
-        <a href="#" class="group-menu {{ request()->is('presences*') ? 'active' : '' }}">
+        <a href="/presences" class="group-menu {{ request()->is('presences*') ? 'active' : '' }}">
             <img src="{{ asset('assets/images/presences.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
             <span class="group-menu-text">Presences</span>
         </a>
-        <a href="#" class="group-menu {{ request()->is('reports*') ? 'active' : '' }}">
-            <img src="{{ asset('assets/images/reports.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
-            <span class="group-menu-text">Reports</span>
+        <a href="#" class="group-menu {{ request()->is('qr*') ? 'active' : '' }}">
+            <img src="{{ asset('assets/images/qr.svg') }}" width="21" alt="group-menu-icon" class="group-menu-icon">
+            <span class="group-menu-text">Scan Qr</span>
         </a>
     </div>
 </nav>
