@@ -14,6 +14,6 @@ Route::get('/overview', function () {
 })->name('overview');
 
 Route::resource('users', UserController::class)->except(['show']);
-Route::resource('presences', PresenceController::class);
+Route::get('presences', [PresenceController::class, 'index']);
 Route::get('presences/{date}/view', [PresenceController::class, 'view'])->name('presences.view');
 Route::get('qr', QrController::class);
