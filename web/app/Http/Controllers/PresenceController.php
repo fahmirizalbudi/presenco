@@ -18,4 +18,22 @@ class PresenceController extends Controller
         $date = Carbon::parse($date)->format('l, F d Y');
         return view('pages.presences.view', compact('presences', 'date'));
     }
+
+    public function store(Request $request) {
+        $user = $request->user();
+        $hasPresence = Presence::where('user_id', $user->id)->where('date', now()->toDateString())->first();
+        if($hasPresence) {
+            return response()->json([
+                'message' => 'You have filled out the presence.'
+            ], 400);
+        }
+
+        Presence::create([
+            'user_id' => $user->id
+        ]);
+
+        return response()->json([
+            'message' => 'Your presence is successfully recorded.'
+        ]);
+    }
 }
