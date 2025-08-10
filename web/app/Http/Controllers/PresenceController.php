@@ -24,6 +24,7 @@ class PresenceController extends Controller
         $hasPresence = Presence::where('user_id', $user->id)->where('date', now()->toDateString())->first();
         if($hasPresence) {
             return response()->json([
+                'status' => 'error',
                 'message' => 'You have filled out the presence.'
             ], 400);
         }
@@ -33,6 +34,7 @@ class PresenceController extends Controller
         ]);
 
         return response()->json([
+            'status' => 'success',
             'message' => 'Your presence is successfully recorded.'
         ]);
     }
