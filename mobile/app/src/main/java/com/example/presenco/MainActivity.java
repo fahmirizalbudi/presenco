@@ -13,14 +13,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.CaptureActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
+    final String url = "http://192.168.43.205:8000/api/presences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +66,27 @@ public class MainActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                Toast.makeText(this, "Hasil: " + result.getContents(), Toast.LENGTH_LONG).show();
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, null, response -> {
+                    try {
+                        String message = response.getString("message");
+                        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }, error -> {
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                }) {
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("X-API-TOKEN", result.getContents());
+                        params.put("Authorization", "Bearer " + Session.token);
+                        return params;
+                    }
+                };
+                Volley.newRequestQueue(this).add(request);
             } else {
-                Toast.makeText(this, "Scan dibatalkan", Toast.LENGTH_SHORT).show();
+                //
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
