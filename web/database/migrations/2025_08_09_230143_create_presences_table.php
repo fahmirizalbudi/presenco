@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('presences', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->date('date')->default(now()->toDateString());
+            $table->date('date');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

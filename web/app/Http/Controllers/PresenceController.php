@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Presence;
 use Carbon\Carbon;
+use Date;
 use Illuminate\Http\Request;
 
 class PresenceController extends Controller
@@ -26,11 +27,12 @@ class PresenceController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'You have filled out the presence.'
-            ], 400);
+            ], 200);
         }
 
         Presence::create([
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'date' => now()->toDateString()
         ]);
 
         return response()->json([
