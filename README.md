@@ -1,82 +1,89 @@
-<p align="center">
-  <img src="https://github.com/fahmirizalbudi/presenco/blob/e99e1d6525804518e9ec5c60a4c97c077e94732e/mobile/app/src/main/res/drawable/logo.png" alt="Countreez Logo" width="300"/>
-</p>
+<div align="center">
+<a href="https://github.com/fahmirizalbudi/presenco" target="blank">
+<img src="https://github.com/JjagoKoding/icon/blob/main/presenco.png?raw=true" width="300" alt="Logo" />
+</a>
+
+<br />
+<br />
+
+![](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+
+</div>
 
 <br/>
 
-# 📝 Presenco
+## 🏁 Presenco
 
-**Presenco** adalah aplikasi (atau sistem) untuk manajemen presensi — memungkinkan pencatatan kehadiran, absensi, serta fitur terkait presensi pengguna/admin secara efektif, sebagai basis/fondasi bagi sistem HR, attendance, atau manajemen kehadiran.
+Presenco is an application (or system) for attendance management using QR scans. It utilizes Laravel as the powerful backend and a native Android application built with Java for the mobile client. This project uses MySQL as the database. Key features include:
 
----
+## ✨ Features
 
-## 🔎 Fitur (Rencana / Saat Ini)
+- **📊 Admin Panel:** Web-based dashboard managed via Laravel to oversee employee data.
+- **📱 Native Mobile App:** Smooth and responsive attendance tracking app built with Java for Android.
+- **📍 QR Attendance:** Secure attendance features using QR Code.
 
-- CRUD data kehadiran / presensi (tambah, edit, lihat, hapus)  
-- Autentikasi & otorisasi user (misalnya user/petugas/admin)  
-- Pencatatan presensi (absensi masuk/keluar)  
-- Filtering / list / histori presensi — lihat riwayat per user / per periode  
-- RESTful API (backend) + antarmuka frontend / web (jika ada)  
-- Modular: backend dan frontend terpisah (jika Anda mendesain dengan struktur seperti itu)  
+## 👩‍💻 Tech Stack
 
----
+- **Laravel**: A PHP framework used for the Backend API and Web Administration.
+- **Java (Android)**: Native Android development language for the mobile application.
+- **MySQL**: Relational database management system.
 
-## 🛠️ Teknologi
+## 📦 Getting Started
 
-- Backend: Laravel API
-- API: RESTful (endpoint untuk presensi, user, autentikasi, histori)  
-- Front-end: Laravel Blade & Android Native Java
-- Basis data: MySQL 
+To get a local copy of this project up and running, follow these steps.
 
----
+### 🚀 Prerequisites
 
-## 🚀 Instalasi & Setup
+- **PHP** (v8.2 or higher) & **Composer**.
+- **Android Studio** & **JDK 11/17**.
+- **MySQL** (or another supported SQL database).
 
-### 1. Clone Repository  
-```bash
-git clone https://github.com/fahmirizalbudi/presenco.git
-cd presenco
-````
+## 🛠️ Installation
 
-### 2. Setup Backend / API
+1. **Clone the repository:**
 
-* Masuk ke folder backend / root project (tergantung struktur)
-* Install dependensi sesuai bahasa / framework yang digunakan
-* Buat konfigurasi environment / database jika diperlukan (misalnya `.env`, `config.json`, dll)
-* Jalankan server
+   ```bash
+   git clone https://github.com/fahmirizalbudi/presenco.git
+   cd presenco
+   ```
 
-  ```bash
-  # Contoh menjalankan server
-  php artisan serve
-  ```
+2. **Install dependencies:**
 
-  atau sesuai teknologi yang Anda gunakan
+   ```bash
+   #mobile
+   > Open Android Studio.
+   > Select Open an Existing Project and navigate to the mobile/ folder inside the repository.
+   > Let Gradle sync the dependencies.
 
-### 3. (Opsional) Setup Front-end / UI
+   #web
+   cd web
+   composer install
+   cp .env .env.example
+   php artisan key:generate
+   ```
 
-* Masuk ke folder front-end (misalnya `web/` atau `mobile/`)
-* Jalankan server front-end / build front-end
+3. **Start the development server:**
 
-  ```bash
-  # Contoh menjalankan client
-  adb shell am start -n com.nama.package/com.nama.package.MainActivity
-  ```
-* Buka aplikasi di mobile
+   ```bash
+   #mobile
+   > Run the app on an Emulator or Physical Device.
 
----
+   #web
+   php artisan serve
+   ```
 
-## 📁 Struktur Direktori
+## 📖 Usage
 
-```
-presenco/
-├── mobile/     
-├── web/     
-└── README.md 
-```
+### ✔ Running the Website
 
----
+- **Backend API:** `php artisan serve`.
+- **Android app:** `Launch via Android Studio or build the APK`.
 
-## 📄 Lisensi & Kontak
+> Use [http://localhost:8000](http://localhost:8000) to test the api in your Postman.
 
-Project ini open-source — silakan digunakan, dikembangkan atau dimodifikasi sesuai kebutuhan Anda.
-Untuk pertanyaan, kontribusi, atau kolaborasi, silakan buka issue di GitHub atau hubungi maintainer: **@fahmirizalbudi**
+## 📜 License
+
+All rights reserved. This project is for educational purposes only and cannot be used or distributed without permission.
