@@ -15,33 +15,33 @@
 
 <br/>
 
-## 🏁 Presenco
+## Presenco
 
 Presenco is an application (or system) for attendance management using QR scans. It utilizes Laravel as the powerful backend and a native Android application built with Java for the mobile client. This project uses MySQL as the database. Key features include:
 
-## ✨ Features
+## Features
 
-- **📊 Admin Panel:** Web-based dashboard managed via Laravel to oversee employee data.
-- **📱 Native Mobile App:** Smooth and responsive attendance tracking app built with Java for Android.
-- **📍 QR Attendance:** Secure attendance features using QR Code.
+- **Admin Panel:** Web-based dashboard managed via Laravel to oversee employee data.
+- **Native Mobile App:** Smooth and responsive attendance tracking app built with Java for Android.
+- **QR Attendance:** Secure attendance features using QR Code.
 
-## 👩‍💻 Tech Stack
+## Tech Stack
 
 - **Laravel**: A PHP framework used for the Backend API and Web Administration.
 - **Java (Android)**: Native Android development language for the mobile application.
 - **MySQL**: Relational database management system.
 
-## 📦 Getting Started
+## Getting Started
 
 To get a local copy of this project up and running, follow these steps.
 
-### 🚀 Prerequisites
+### Prerequisites
 
 - **PHP** (v8.2 or higher) & **Composer**.
 - **Android Studio** & **JDK 11/17**.
 - **MySQL** (or another supported SQL database).
 
-## 🛠️ Installation
+## Installation
 
 1. **Clone the repository:**
 
@@ -75,15 +75,15 @@ To get a local copy of this project up and running, follow these steps.
    php artisan serve
    ```
 
-## 📖 Usage
+## Usage
 
-### ✔ Running the Website
+### Running the Website
 
 - **Backend API:** `php artisan serve`.
 - **Android app:** `Launch via Android Studio or build the APK`.
 
 > Use [http://localhost:8000](http://localhost:8000) to test the api in your Postman.
 
-## 📜 License
+## License
 
 All rights reserved. This project is for educational purposes only and cannot be used or distributed without permission.
